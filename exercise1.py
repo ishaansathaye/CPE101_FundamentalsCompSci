@@ -18,3 +18,4 @@ x = 1000
 
 print("X: " + str(x))
 print("Y: " + str(y))
+print()
