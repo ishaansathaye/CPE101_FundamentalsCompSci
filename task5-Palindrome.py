@@ -11,9 +11,11 @@ if (len(user_string) != 5) or stringCheck == True:
   print('Error')
   print()
 else:
-  reverseString = user_string[::-1]
-  print("Reverse of String:", reverseString)
-  print()
-  if user_string == reverseString:
-    print(user_string, "is a palindrome!")
+    reverseString = user_string[::-1]
+    print("Reverse of String:", reverseString)
     print()
+    if user_string == reverseString:
+        print(user_string, "IS a palindrome!")
+        print()
+    else:
+        print(user_string, "is NOT a palindrome!")
