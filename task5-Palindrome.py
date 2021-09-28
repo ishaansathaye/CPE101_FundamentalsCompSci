@@ -19,3 +19,4 @@ else:
         print()
     else:
         print(user_string, "is NOT a palindrome!")
+        print()
