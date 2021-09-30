@@ -2,9 +2,6 @@ def aqi_pollutant_calc(aqiHigh, aqiLow, pollutHigh, pollutLow, pollut):
      aqi = (aqiHigh - aqiLow) / (pollutHigh - pollutLow) * (pollut - pollutLow) + aqiLow
      return aqi
 
-# print(round(aqi_pollutant_calc(100, 51, 35.4, 12.1, 30.1)))
-# print()
-
 def low_high_finderPM2(PM2):
     if (PM2 >= 0) and (PM2 <= 12.0):
         lowPM2 = 0
