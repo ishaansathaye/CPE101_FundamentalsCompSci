@@ -32,6 +32,3 @@ def print_palindrome():
         print()
 
 print_palindrome()
-      
-    
-  
