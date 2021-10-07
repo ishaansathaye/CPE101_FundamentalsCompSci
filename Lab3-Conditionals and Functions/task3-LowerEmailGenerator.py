@@ -3,7 +3,7 @@ import random
 names = []
 print()
 for i in range(0,3):
-    nameInput = input("Enter the first name (first last): ")
+    nameInput = input("Enter a name (first last): ")
     names.append(nameInput)
  
 for i in range(len(names)):
