@@ -4,8 +4,14 @@ names = []
 print()
 position = ""
 for i in range(0,3):
-    prompt = "Enter the", position, "name (first, last): "
-    nameInput = input(prompt)
+    if i == 0:
+      position = "first"
+    elif i == 1:
+      position = "second"
+    else:
+      position = "third"
+    # prompt = "Enter the", position, "name (first, last): "
+    nameInput = input("Enter the " + position + " name (first, last): ")
     names.append(nameInput)
  
 for i in range(len(names)):
