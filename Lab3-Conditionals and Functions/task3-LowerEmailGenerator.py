@@ -2,7 +2,9 @@ import random
 
 names = []
 print()
+position = ""
 for i in range(0,3):
+    prompt = "Enter the", position, "name (first, last): "
     nameInput = input("Enter a name (first last): ")
     names.append(nameInput)
  
