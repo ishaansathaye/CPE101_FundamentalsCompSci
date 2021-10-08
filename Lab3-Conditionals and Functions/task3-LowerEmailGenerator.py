@@ -5,7 +5,7 @@ print()
 position = ""
 for i in range(0,3):
     prompt = "Enter the", position, "name (first, last): "
-    nameInput = input("Enter a name (first last): ")
+    nameInput = input(prompt)
     names.append(nameInput)
  
 for i in range(len(names)):
