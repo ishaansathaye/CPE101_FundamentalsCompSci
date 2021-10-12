@@ -262,6 +262,7 @@ print("SO2 AQI:", aqiSO2, "*" + categorizeAQI(aqiSO2) + "*")
 print("CO AQI:", aqiCO, "*" + categorizeAQI(aqiCO) + "*")
 print()
 
-finalAQI = round((aqiPM2 + aqiPM10 + aqiNO2 + aqiSO2 + aqiCO) / 5)
-print("Average AQI:", finalAQI, "*" + categorizeAQI(finalAQI) + "*")
+# finalAQI = round((aqiPM2 + aqiPM10 + aqiNO2 + aqiSO2 + aqiCO) / 5) #average aqi
+finalAQI = round(max(aqiPM2, aqiPM10, aqiNO2, aqiSO2, aqiCO))
+print("Maximum AQI:", finalAQI, "*" + categorizeAQI(finalAQI) + "*")
 print()
