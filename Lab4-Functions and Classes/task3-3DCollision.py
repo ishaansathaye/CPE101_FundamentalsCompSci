@@ -27,12 +27,17 @@ print("Enter the details for the 2nd sphere:")
 sphere2 = Sphere("2nd")
 
 print()
-print()
 if sphere1.volumeCalc() == sphere2.volumeCalc():
     print("The 2 Spheres are IDENTICAL with a Volume of", sphere2.volumeCalc())
 elif sphere1.collision(sphere2.x, sphere2.y, sphere2.z, sphere2.rad) == True:
     print("The Spheres COLLIDE!")
 else:
     print("The Spheres do not collide!")
+    if sphere1.volumeCalc() > sphere2.volumeCalc():
+        multiplier = round(sphere1.volumeCalc() / sphere2.volumeCalc(), 2)
+        print("Sphere 1 is", str(multiplier), "times bigger than Sphere 2!")
+    else:
+        multiplier = sphere2.volumeCalc() / sphere1.volumeCalc()
+        print("Sphere 2 is", str(multiplier), "times bigger than Sphere 1!")
 
 print()
