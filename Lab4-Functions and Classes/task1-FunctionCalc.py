@@ -8,13 +8,23 @@ def div(x,y):
     return x/y
 
 print()
-firstNum = input("Enter the first number: ")
+firstNum = input("Enter the first integer number: ")
 operator = input("Enter the operator: ")
-secondNum = input("Enter the second number: ")
+secondNum = input("Enter the second integer number: ")
 
-if operator != '+' or '-' or '*' or '/':
-    print("ERROR: Invalid Operator!")
-elif operator == '+':
-    print('x', firstNum)
+if (operator == '+' or '-' or '*' or '/') and (firstNum.isalpha() == False) and (secondNum.isalpha() == False):
+    intFirstNum = int(firstNum)
+    intSecNum = int(secondNum)
+    if operator == '+':
+        print(add(intFirstNum, intSecNum))
+    if operator == '-':
+        print(subtract(intFirstNum, intSecNum))
+    if operator == '*':
+        print(mult(intFirstNum, intSecNum))
+    if operator == '/':
+        print(div(intFirstNum, intSecNum))
+else:
+    print()
+    print("ERROR: Invalid Operator or Input!")
 
 print()
