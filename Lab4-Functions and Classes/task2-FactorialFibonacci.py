@@ -1,17 +1,17 @@
-# #Factorial Recursion
-# def factorial(x):
-#     if x == 1:
-#         return x
-#     return x*factorial(x-1)
+#Factorial Recursion
+def factorial(x):
+    if x == 1:
+        return x
+    return x*factorial(x-1)
 
-# print()
-# number = int(input("Enter a number: "))
-# if number < 0:
-#     print("ERROR: Negative number!")
-# elif number == 0:
-#     print("1")
-# else:
-#     print(str(number) + "! is", factorial(number))
+print()
+number = int(input("Enter a number: "))
+if number < 0:
+    print("ERROR: Negative number!")
+elif number == 0:
+    print("1")
+else:
+    print(str(number) + "! is", factorial(number))
 
 #Fibonacci Sequence Recursion
 def fibonacci(N):
@@ -19,7 +19,7 @@ def fibonacci(N):
         return N
     return fibonacci(N-1)+fibonacci(N-2)
 
-for i in range(0,10):
-    print(fibonacci(i))
-
-print(fibonacci(3))
+print()
+for i in range(0,11):
+    print("N=" + str(i), "->", str(fibonacci(i)))
+print()
