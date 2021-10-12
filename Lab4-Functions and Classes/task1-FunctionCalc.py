@@ -12,19 +12,26 @@ firstNum = input("Enter the first integer number: ")
 operator = input("Enter the operator: ")
 secondNum = input("Enter the second integer number: ")
 
-if (operator == '+' or '-' or '*' or '/') and (firstNum.isalpha() == False) and (secondNum.isalpha() == False):
-    intFirstNum = int(firstNum)
-    intSecNum = int(secondNum)
-    if operator == '+':
-        print(add(intFirstNum, intSecNum))
-    if operator == '-':
-        print(subtract(intFirstNum, intSecNum))
-    if operator == '*':
-        print(mult(intFirstNum, intSecNum))
-    if operator == '/':
-        print(div(intFirstNum, intSecNum))
+if (firstNum.isalpha() == False) and (secondNum.isalpha() == False):
+    if operator == '+' or operator == '-' or operator == '*' or operator == '/':
+        intFirstNum = int(firstNum)
+        intSecNum = int(secondNum)
+        print()
+        result = 0
+        if operator == '+':
+            result = add(intFirstNum, intSecNum)
+        if operator == '-':
+            result = subtract(intFirstNum, intSecNum)
+        if operator == '*':
+            result = mult(intFirstNum, intSecNum)
+        if operator == '/':
+            result = div(intFirstNum, intSecNum)
+        print(firstNum, operator, secondNum, "=", str(result))
+    else:
+        print()
+        print("ERROR: Invalid Operator!")
 else:
     print()
-    print("ERROR: Invalid Operator or Input!")
+    print("ERROR: Invalid Input!")
 
 print()
