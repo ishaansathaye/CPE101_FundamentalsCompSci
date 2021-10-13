@@ -9,6 +9,7 @@ def is_even(num):
             num = int(input("Enter a number: "))
             print()
             continue
+        break
     if num % 2 == 0:
         return True
     else:
