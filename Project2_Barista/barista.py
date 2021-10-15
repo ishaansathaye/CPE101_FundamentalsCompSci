@@ -17,7 +17,8 @@ class coffee_order:
             print("-----------------------------------------------------")
             self.coffeeType = input("What type of coffee would you like?: ")
             self.coffeeType = self.coffeeType.lower()
-            if self.coffeeType == "black" or self.coffeeType == "latte" or self.coffeeType == "iced black" or self.coffeeType == "iced latte":
+            if (self.coffeeType == "black" or self.coffeeType == "latte" 
+            or self.coffeeType == "iced black" or self.coffeeType == "iced latte"):
                 continueProgram = True
                 if self.coffeeType == "black" or self.coffeeType == 'iced black':
                     newTries = 0
@@ -75,21 +76,25 @@ class coffee_order:
                 n = 5
             else:
                 n = 10
-                if self.coffeeType == 'black':
+            if self.coffeeType == 'black':
+                if self.milk == 'y':
+                    self.price = pricesList[0+n]+pricesList[4+n]
+                else:
                     self.price = pricesList[0+n]
-                    if self.milk == 'y':
-                        self.price = self.price+pricesList[4+n]
-                if self.coffeeType == 'iced black':
-                    self.price = pricesList[1+n]
-                    if self.milk == 'y':
-                        self.price = self.price+pricesList[4+n]
-                if self.coffeeType == 'latte':
-                    self.price = pricesList[2+n]
-                if self.coffeeType == 'iced latte':
-                    self.price = pricesList[3+n]
+            if self.coffeeType == 'iced black':
+                self.price = pricesList[1+n]
+                if self.milk == 'y':
+                    self.price = self.price+pricesList[4+n]
+            if self.coffeeType == 'latte':
+                self.price = pricesList[2+n]
+            if self.coffeeType == 'iced latte':
+                self.price = pricesList[3+n]
+        self.price = format(self.price, '.2f')
+        return self.price
     def __repr__(self):
         if self.continueDisplay == True:
-            display = "Coffee Type: " + self.coffeeType.upper() + "\n" + "Coffee Size: " + self.size.upper() + "\n" + "Milk Added: " + self.milk.upper() + "\n" + "Price: " + self.price
+            display = ("Coffee Type: " + self.coffeeType.upper() + "\n" + "Coffee Size: " + self.size.upper() + "\n" 
+            + "Milk Added: " + self.milk.upper() + "\n" + "Price: $" + str(self.price))
             return display
         else:
             return "No Order!"
@@ -99,5 +104,6 @@ personOrder1.order_coffee()
 print()
 print("Order Summary")
 print("-----------------------------------------------------")
+personOrder1.calc_price()
 print(repr(personOrder1))
 print()
