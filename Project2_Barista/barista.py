@@ -73,7 +73,6 @@ class coffee_order:
             return display
         else:
             return "No Order!"
-    
 
 personOrder1 = coffee_order()
 personOrder1.order_coffee()
