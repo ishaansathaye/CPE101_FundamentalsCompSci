@@ -3,6 +3,7 @@ class coffee_order:
         self.coffeeType = ""
         self.size = ""
         self.milk = "n"
+        self.price = 0
     def errorMessage(self):
         print()
         print("Sorry, we cannot help you here!")
@@ -66,10 +67,29 @@ class coffee_order:
                     print()
                     print("Can you please try again?")
     def calc_price(self):
-        pass
+        if self.continueDisplay == True:
+            pricesList = [1.25, 1.40, 2.00, 2.20, 0.05, 1.50, 1.90, 2.50, 2.70, 0.10, 1.75, 2.40, 3.00, 3.20, 0.20]
+            if self.size == 'short':
+                n = 0
+            elif self.size == 'regular':
+                n = 5
+            else:
+                n = 10
+                if self.coffeeType == 'black':
+                    self.price = pricesList[0+n]
+                    if self.milk == 'y':
+                        self.price = self.price+pricesList[4+n]
+                if self.coffeeType == 'iced black':
+                    self.price = pricesList[1+n]
+                    if self.milk == 'y':
+                        self.price = self.price+pricesList[4+n]
+                if self.coffeeType == 'latte':
+                    self.price = pricesList[2+n]
+                if self.coffeeType == 'iced latte':
+                    self.price = pricesList[3+n]
     def __repr__(self):
         if self.continueDisplay == True:
-            display = "Coffee Type: " + self.coffeeType.upper() + "\n" + "Coffee Size: " + self.size.upper() + "\n" + "Milk Added: " + self.milk.upper() + "\n" + "Price:"
+            display = "Coffee Type: " + self.coffeeType.upper() + "\n" + "Coffee Size: " + self.size.upper() + "\n" + "Milk Added: " + self.milk.upper() + "\n" + "Price: " + self.price
             return display
         else:
             return "No Order!"
