@@ -1,4 +1,4 @@
-import Lab4_FunctionsandClasses.task1_FunctionCalc as FunctionCalc
+import CPE-101-FundamentalsCompSci.Lab4_FunctionsandClasses.task1_FunctionCalc as FunctionCalc
 
 import unittest
 
