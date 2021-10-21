@@ -1,3 +1,6 @@
+from sys import is_finalizing
+
+
 class employee:
     def __init__(self, name, age, rank_ID):
         self.name = name
@@ -34,4 +37,14 @@ print(employee1.is_higher_rank(employee4))
 print(employee3.is_higher_rank(employee2))
 print(employee4.is_higher_rank(employee2))
 print(employee4.is_higher_rank(employee3))
+print()
+
+def test_is_higher_rank():
+    assert employee1.is_higher_rank(employee4) == 'These employees are both the same rank!', "Should be the same"
+    assert employee3.is_higher_rank(employee2) == 'Dwight is senior in rank than Pam!', "Should be the Dwigth senior Pam"
+    assert employee4.is_higher_rank(employee2) == 'Jim is senior in rank than Dwight!', "Should be Jim senior Dwight"
+    assert employee4.is_higher_rank(employee3) == 'Jim is senior in rank than Pam!', "Should be Jim senior Pam"
+
+test_is_higher_rank()
+print("Everything Passed.")
 print()
