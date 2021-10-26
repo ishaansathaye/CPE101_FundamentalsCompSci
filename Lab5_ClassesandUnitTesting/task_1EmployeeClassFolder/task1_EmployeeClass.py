@@ -1,6 +1,3 @@
-from sys import is_finalizing
-
-
 class employee:
     def __init__(self, name, age, rank_ID):
         self.name = name
