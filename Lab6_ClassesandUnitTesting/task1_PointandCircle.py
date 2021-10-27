@@ -28,12 +28,14 @@ print()
 print(point_location(point1, circle1))
 print()
 
-# def test_point_location():
-#     assert point_location(point1, circle1) == 'These employees are both the same rank!', "Should be the same"
-#     assert point_location(point1, circle1) == 'Dwight is senior in rank than Pam!', "Should be the Dwigth senior Pam"
-#     assert point_location(point1, circle1) == 'Jim is senior in rank than Dwight!', "Should be Jim senior Dwight"
-#     assert point_location(point1, circle1) == 'Jim is senior in rank than Pam!', "Should be Jim senior Pam"
+def test_point_location():
+    circle1.radius = 6
+    assert point_location(point1, circle1) == 'Inside Circle!', "Should be inside the circle since distance less than radius (6)"
+    circle1.radius = 2
+    assert point_location(point1, circle1) == 'Outside Circle!', "Should be outside the circle since distance greater than radius (2)"
+    circle1.radius = 5
+    assert point_location(point1, circle1) == 'On Circle!', "Should be on the circle since distance equals radius (5)"
 
-# test_point_location()
-# print("Everything Passed.")
-# print()
+test_point_location()
+print("Everything Passed.")
+print()
