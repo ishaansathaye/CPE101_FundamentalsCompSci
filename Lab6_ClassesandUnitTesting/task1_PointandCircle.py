@@ -28,12 +28,12 @@ print()
 print(point_location(point1, circle1))
 print()
 
-def test_point_location():
-    assert point_location(point1, circle1) == 'These employees are both the same rank!', "Should be the same"
-    assert point_location(point1, circle1) == 'Dwight is senior in rank than Pam!', "Should be the Dwigth senior Pam"
-    assert point_location(point1, circle1) == 'Jim is senior in rank than Dwight!', "Should be Jim senior Dwight"
-    assert point_location(point1, circle1) == 'Jim is senior in rank than Pam!', "Should be Jim senior Pam"
+# def test_point_location():
+#     assert point_location(point1, circle1) == 'These employees are both the same rank!', "Should be the same"
+#     assert point_location(point1, circle1) == 'Dwight is senior in rank than Pam!', "Should be the Dwigth senior Pam"
+#     assert point_location(point1, circle1) == 'Jim is senior in rank than Dwight!', "Should be Jim senior Dwight"
+#     assert point_location(point1, circle1) == 'Jim is senior in rank than Pam!', "Should be Jim senior Pam"
 
-test_point_location()
-print("Everything Passed.")
-print()
+# test_point_location()
+# print("Everything Passed.")
+# print()
