@@ -7,10 +7,7 @@ def is_palindrome(word):
         return False
 
 def filter_palindromes(wordList):
-    palindromeList = []
-    for word in wordList:
-        if is_palindrome(word) == True:
-            palindromeList.append(word)
+    palindromeList = [word for word in wordList if is_palindrome(word) == True]
     return palindromeList
 
 print()
