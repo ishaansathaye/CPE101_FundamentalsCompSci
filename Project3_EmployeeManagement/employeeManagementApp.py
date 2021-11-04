@@ -9,46 +9,66 @@ class employee:
         self.position = position
     
     def display_employees(listOfEmployees):
+        print()
         print("Employees in Dunder Mifflin are:")
         print()
         for item in listOfEmployees:
             print(item.name + ",", str(item.age) + ",", item.position)
 
-    def allocate_department(self, listOfEmployees):
-        self.allocatedList = []
+    def allocate_department(listOfEmployees):
+        allocatedList = []
         managementList = []
         salesList = []
         accountsList = []
-        for item in listOfEmployees:
-            if item.position == "Manager" or "Manager" in item.position:
-                managementList.append(item)
-            elif item.position == "Salesperson":
-                salesList.append(item)
-            elif item.position == "Accountant":
-                accountsList.append(item)
+        for employee in listOfEmployees:
+            if employee.position == "Manager" or "Manager" in employee.position:
+                managementList.append(employee)
+            elif employee.position == "Salesperson":
+                salesList.append(employee)
+            elif employee.position == "Accountant":
+                accountsList.append(employee)
             else:
                 pass
-        self.allocatedList.append(managementList)
-        self.allocatedList.append(salesList)
-        self.allocatedList.append(accountsList)
-        return self.allocatedList
+        allocatedList.append(managementList)
+        allocatedList.append(salesList)
+        allocatedList.append(accountsList)
+        return allocatedList
     
-    def display_department_employees(self):
-        pass
+    def display_department_employees(listOfDep):
+        print()
+        print("The individual employees in each department are show below:")
+        print("---------------------------------------------------------")
+        print()
+        n= 1
+        for dep in listOfDep:
+            if n == 1:
+                print("Management:")
+                print("-----------")
+            elif n ==2:
+                print("Salespersons:")
+                print("-------------")
+            else:
+                print("Accountants:")
+                print("------------")
+            for empl in dep:
+                print(empl.name + ",", str(empl.age) + ",", empl.position)
+            print()
+            n += 1
 
-print()
+
 employeeList = []
 employeeList.append(employee("Michael", 45, "Manager"))
 employeeList.append(employee("Dwight", 40, "Assistant to the Manager"))
-employeeList.append(employee("Jim", 45, "Manager"))
-employeeList.append(employee("Pam", 45, "Receptionist"))
-employeeList.append(employee("Angela", 45, "Accountant"))
-employeeList.append(employee("Kevin", 45, "Accountant"))
-employeeList.append(employee("Oscar", 45, "Accountant"))
-employeeList.append(employee("Stanley", 45, "Salesperson"))
+employeeList.append(employee("Jim", 35, "Manager"))
+employeeList.append(employee("Pam", 30, "Receptionist"))
+employeeList.append(employee("Angela", 32, "Accountant"))
+employeeList.append(employee("Kevin", 42, "Accountant"))
+employeeList.append(employee("Oscar", 40, "Accountant"))
+employeeList.append(employee("Stanley", 55, "Salesperson"))
 employeeList.append(employee("Phyllis", 45, "Salesperson"))
-employeeList.append(employee("Andy", 45, "Salesperson"))
-employeeList.append(employee("Ryan", 45, "Salesperson"))
-employeeList.append(employee("Creed", 45, "Salesperson"))
+employeeList.append(employee("Andy", 38, "Salesperson"))
+employeeList.append(employee("Ryan", 30, "Salesperson"))
+employeeList.append(employee("Creed", 55, "Salesperson"))
 
 employee.display_employees(employeeList)
+employee.display_department_employees(employee.allocate_department(employeeList))
