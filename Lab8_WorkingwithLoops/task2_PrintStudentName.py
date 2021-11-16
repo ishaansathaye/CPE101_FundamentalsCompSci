@@ -14,5 +14,7 @@ def studentMark(names, listOfMarks):
         average = average / 3
         print(names[spot]+":", "Average: "+str(average), "Highest: "+str(max))
         spot += 1
-studentMark(list_student, list_marks)
-print()
+
+if __name__ == '__main__':
+    studentMark(list_student, list_marks)
+    print()

@@ -1,1 +1,0 @@
-list_student=["Jack", "Jill", "Mike"]
