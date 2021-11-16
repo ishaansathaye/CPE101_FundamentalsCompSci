@@ -1,0 +1,30 @@
+import unittest
+from task1_HeartRate import calculate_average_heart_rates as calcAverage
+
+class TestEmployeeClass(unittest.TestCase):
+        
+    def test_calcAverageHeartRate1(self):
+        heart_rate = [[ 72, 75, 71, 73]]
+        self.assertAlmostEqual(calcAverage(heart_rate), 72.75, 2, "Should be 72.75")
+
+
+    # def test_calcAverageHeartRate2(self):
+    #     heart_rate = [[ 91, 90, 94, 93]]
+    #     self.assertEqual(self.employee3.is_higher_rank(self.employee2), 
+    #     "Dwight is senior in rank than Pam!",
+    #     "Should be Dwight higher than Pam")
+
+    # def test_calcAverageHeartRate3(self):
+    #     heart_rate = [[ 130, 135, 139, 142]]
+    #     self.assertEqual(self.employee4.is_higher_rank(self.employee2), 
+    #     "Jim is senior in rank than Dwight!",
+    #     "Should be Jim senior to Dwight")
+    
+    # def test_calcAverageHeartRate4(self):
+    #     heart_rate = [[ 120, 118, 110, 105, 100, 98]]
+    #     self.assertEqual(self.employee4.is_higher_rank(self.employee3), 
+    #     "Jim is senior in rank than Pam!",
+    #     "Should be Jim senior to Pam")
+
+if __name__ == "__main__":
+    unittest.main()
