@@ -14,7 +14,6 @@ def negate_image(input, output):
         for i in range(len(temp)):
             temp[i] = str(abs((int(temp[i]) - 255)))
         temp[i] = temp[i] + "\n"
-        print(temp)
         outputFile.write(" ".join(temp))
     inputFile.close()
     outputFile.close()
@@ -34,7 +33,9 @@ def remove_green_image(input, output):
 def remove_blue_image(input, output):
     pass
 
+# negate_image("Project4_ImageModifier/fullPPM.txt", "Project4_ImageModifier/output.txt")
 negate_image("Project4_ImageModifier/samplePPM.txt", "Project4_ImageModifier/output.txt")
+
 
 # print()
 # inputFile = input("Enter name of input PPM file (test.txt): ")
