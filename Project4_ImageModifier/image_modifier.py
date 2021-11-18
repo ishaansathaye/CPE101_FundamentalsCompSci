@@ -8,7 +8,6 @@ def negate_image(input, output):
     body = inputFile.readlines()[3:]
     for line in header:
         outputFile.write(line)
-    
     for line in body:
         temp = line.split()
         for i in range(len(temp)):
@@ -19,10 +18,46 @@ def negate_image(input, output):
     outputFile.close()
 
 def high_contrast_image(input, output):
-    pass
+    inputFile = open(input, 'r')
+    outputFile = open(output, 'a')
+    header = inputFile.readlines()[0:3]
+    inputFile.seek(2)
+    body = inputFile.readlines()[3:]
+    for line in header:
+        outputFile.write(line)
+    for line in body:
+        temp = line.split()
+        for i in range(len(temp)):
+            if int(temp[i]) > 127:
+                temp[i] = 255
+            else:
+                temp[i] = 0
+            temp[i] = str(temp[i])
+        temp[i] = temp[i] + "\n"
+        outputFile.write(" ".join(temp))
+    inputFile.close()
+    outputFile.close()
 
 def gray_scale_image(input, output):
-    pass
+    inputFile = open(input, 'r')
+    outputFile = open(output, 'a')
+    header = inputFile.readlines()[0:3]
+    inputFile.seek(2)
+    body = inputFile.readlines()[3:]
+    for line in header:
+        outputFile.write(line)
+    for line in body:
+        temp = line.split()
+        for i in range(0, len(temp), 3):
+            if int(temp[i]) > 127:
+                temp[i] = 255
+            else:
+                temp[i] = 0
+            temp[i] = str(temp[i])
+        temp[i] = temp[i] + "\n"
+        outputFile.write(" ".join(temp))
+    inputFile.close()
+    outputFile.close()
 
 def remove_red_image(input, output):
     pass
@@ -33,8 +68,8 @@ def remove_green_image(input, output):
 def remove_blue_image(input, output):
     pass
 
-# negate_image("Project4_ImageModifier/fullPPM.txt", "Project4_ImageModifier/output.txt")
-negate_image("Project4_ImageModifier/samplePPM.txt", "Project4_ImageModifier/output.txt")
+gray_scale_image("Project4_ImageModifier/fullPPM.txt", "Project4_ImageModifier/output.txt")
+# high_contrast_image("Project4_ImageModifier/samplePPM.txt", "Project4_ImageModifier/output.txt")
 
 
 # print()
@@ -68,3 +103,13 @@ negate_image("Project4_ImageModifier/samplePPM.txt", "Project4_ImageModifier/out
 # else:
 #     print()
 #     print("Not a valid option!")
+list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+for i in range(0, 10, 3):
+    try:
+        average = (list[i]+list[i+1]+list[i+2]) / 3
+        list[i] = average
+        list[i+1] = average
+        list[i+2] = average
+    except:
+        pass
+print(list)
