@@ -55,7 +55,7 @@ def gray_scale_image(input, output):
                 temp[i+1] = str(average)
                 temp[i+2] = str(average)
             except:
-                pass
+                pass #if text file is uneven
         temp[i+2] = temp[i+2] + "\n"
         outputFile.write(" ".join(temp))
     inputFile.close()
