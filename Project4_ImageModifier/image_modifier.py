@@ -6,23 +6,16 @@ def negate_image(input, output):
     header = inputFile.readlines()[0:3]
     inputFile.seek(2)
     body = inputFile.readlines()[3:]
-    
     for line in header:
         outputFile.write(line)
+    
     for line in body:
-        print(line)
-        line = line.rstrip(" ")
-        print(line)
-        lenLine = len(line)
-        # print(lenLine)
-        for number in line:
-            try:
-                number = abs((int(number) - 255))
-                # print(number)
-            except:
-                pass
-        # print(line)
-        outputFile.write(line)
+        temp = line.split()
+        for i in range(len(temp)):
+            temp[i] = str(abs((int(temp[i]) - 255)))
+        temp[i] = temp[i] + "\n"
+        print(temp)
+        outputFile.write(" ".join(temp))
     inputFile.close()
     outputFile.close()
 
