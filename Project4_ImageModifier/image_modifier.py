@@ -37,7 +37,7 @@ def high_contrast_image(input, output):
         outputFile.write(" ".join(temp))
     inputFile.close()
     outputFile.close()
-
+# TODO: fix gray scale with function below
 def gray_scale_image(input, output):
     inputFile = open(input, 'r')
     outputFile = open(output, 'a')
