@@ -37,7 +37,7 @@ def high_contrast_image(input, output):
         outputFile.write(" ".join(temp))
     inputFile.close()
     outputFile.close()
-# TODO: fix gray scale with function below
+
 def gray_scale_image(input, output):
     inputFile = open(input, 'r')
     outputFile = open(output, 'a')
@@ -49,12 +49,14 @@ def gray_scale_image(input, output):
     for line in body:
         temp = line.split()
         for i in range(0, len(temp), 3):
-            if int(temp[i]) > 127:
-                temp[i] = 255
-            else:
-                temp[i] = 0
-            temp[i] = str(temp[i])
-        temp[i] = temp[i] + "\n"
+            try:
+                average = int((int(temp[i])+int(temp[i+1])+int(temp[i+2])) / 3)
+                temp[i] = str(average)
+                temp[i+1] = str(average)
+                temp[i+2] = str(average)
+            except:
+                pass
+        temp[i+2] = temp[i+2] + "\n"
         outputFile.write(" ".join(temp))
     inputFile.close()
     outputFile.close()
@@ -68,8 +70,15 @@ def remove_green_image(input, output):
 def remove_blue_image(input, output):
     pass
 
-gray_scale_image("Project4_ImageModifier/fullPPM.txt", "Project4_ImageModifier/output.txt")
+# negate_image("Project4_ImageModifier/samplePPM.txt", "Project4_ImageModifier/output.txt")
+# negate_image("Project4_ImageModifier/fullPPM.txt", "Project4_ImageModifier/output.txt")
+
 # high_contrast_image("Project4_ImageModifier/samplePPM.txt", "Project4_ImageModifier/output.txt")
+# high_contrast_image("Project4_ImageModifier/fullPPM.txt", "Project4_ImageModifier/output.txt")
+
+# gray_scale_image("Project4_ImageModifier/samplePPM.txt", "Project4_ImageModifier/output.txt")
+gray_scale_image("Project4_ImageModifier/fullPPM.txt", "Project4_ImageModifier/output.txt")
+
 
 
 # print()
@@ -103,13 +112,14 @@ gray_scale_image("Project4_ImageModifier/fullPPM.txt", "Project4_ImageModifier/o
 # else:
 #     print()
 #     print("Not a valid option!")
-list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-for i in range(0, 10, 3):
-    try:
-        average = (list[i]+list[i+1]+list[i+2]) / 3
-        list[i] = average
-        list[i+1] = average
-        list[i+2] = average
-    except:
-        pass
-print(list)
+
+# temp = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 17, 19]
+# for i in range(0, len(temp), 3):
+#     try:
+#         average = int((temp[i]+temp[i+1]+temp[i+2]) / 3)
+#         temp[i] = average
+#         temp[i+1] = average
+#         temp[i+2] = average
+#     except:
+#         pass
+# print(temp)
