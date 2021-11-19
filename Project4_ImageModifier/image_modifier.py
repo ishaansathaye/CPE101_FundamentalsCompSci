@@ -175,18 +175,16 @@ elif chosenFunc.lower() == 'b':
 elif chosenFunc.lower() == 'c':
     gray_scale_image(inputFile, outputFile)
 elif chosenFunc.lower() == 'd':
-    colorToRemove = input("Which color would you like to remove? (R, G, B")
-    if colorToRemove.lower() == 'r':
+    colorToRemove = input("Which color would you like to remove? (R, G, B): ")
+    if colorToRemove.lower() == "r":
         remove_red_image(inputFile, outputFile)
-    elif colorToRemove.lower() == 'g':
+    elif colorToRemove.lower() == "g":
         remove_green_image(inputFile, outputFile)
-    elif colorToRemove.lower() == 'b':
+    elif colorToRemove.lower() == "b":
         remove_blue_image(inputFile, outputFile)
     else:
         print()
         print("Not a valid color option!")
-    print()
-    print("Not a valid color option!")
 else:
     print()
     print("Not a valid option!")
